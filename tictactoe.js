@@ -50,8 +50,28 @@ const showWinner = (winner) =>{
 
     let text = `Congrasulation, Winner is ${winner} `;
     msg.innerText = text;
-
+    disable();
     msgContainer.classList.remove("hide");
     
 
 }
+
+let disable = () =>{
+
+    for(let b of boxes){
+      b.disabled = true;
+    }
+}
+let enable = () =>{
+    for(let b of boxes){
+        b.disabled = false;
+        b.innerText = "";
+      }
+}
+let resetGame = () =>{
+    turn0 = true;
+    enable();
+    msgContainer.classList.add("hide");
+}
+newGame.addEventListener("click",resetGame);
+resetBtn.addEventListener("click",resetGame);
