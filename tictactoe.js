@@ -1,5 +1,8 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
+let newGame = document.querySelector("#newGame");
+let msg = document.querySelector("#msg");
+let msgContainer = document.querySelector(".msg-container");
 
 let turn0 = true;
 
@@ -36,8 +39,19 @@ const checkWinner = () => {
         if(pos1 != "" && pos2 != "" && pos3 != ""){
             if(pos1 === pos2 && pos2 === pos3){
                 console.log("Winner is :",pos1);
+                showWinner(pos1);
             }
         }
         
     }
+}
+
+const showWinner = (winner) =>{
+
+    let text = `Congrasulation, Winner is ${winner} `;
+    msg.innerText = text;
+
+    msgContainer.classList.remove("hide");
+    
+
 }

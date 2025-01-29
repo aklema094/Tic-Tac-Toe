@@ -42,3 +42,20 @@ body{
     border-radius: 1rem;
     color: white;
 }
+#newGame{
+    padding: 0.7rem;
+    font-size: 1.25 rem;
+    background-color: #191913;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    margin-top: 20px;
+
+}
+.msg-container{
+    margin-top: 10px;
+    height: 100px;
+}
+.hide{
+    display: none;
+}
