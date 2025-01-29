@@ -3,7 +3,7 @@ let resetBtn = document.querySelector("#reset-btn");
 
 let turn0 = true;
 
-const winnigPattern = [[0,1,2],
+const winingPattern = [[0,1,2],
                        [3,4,5],
                        [6,7,8],
                        [0,3,6],
@@ -21,7 +21,23 @@ boxes.forEach((box)=>{
     turn0 = true;
   } 
   box.disabled = true; 
- });
-
- 
+  checkWinner();
+ }); 
 });
+
+const checkWinner = () => {
+     
+    for(let pattern of winingPattern){
+        
+        let pos1 = boxes[pattern[0]].innerHTML;
+        let pos2 = boxes[pattern[1]].innerHTML;
+        let pos3 = boxes[pattern[2]].innerHTML;
+
+        if(pos1 != "" && pos2 != "" && pos3 != ""){
+            if(pos1 === pos2 && pos2 === pos3){
+                console.log("Winner is :",pos1);
+            }
+        }
+        
+    }
+}
